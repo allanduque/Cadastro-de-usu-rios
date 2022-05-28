@@ -1,0 +1,12 @@
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\bin\Debug\net6.0\Cadastro-Usuarios-Infra.deps.json
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\bin\Debug\net6.0\Cadastro-Usuarios-Infra.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\bin\Debug\net6.0\Cadastro-Usuarios-Infra.pdb
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\Cadastro-Usuarios-Infra.csproj.AssemblyReference.cache
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\Cadastro-Usuarios-Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\Cadastro-Usuarios-Infra.AssemblyInfoInputs.cache
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\Cadastro-Usuarios-Infra.AssemblyInfo.cs
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\Cadastro-Usuarios-Infra.csproj.CoreCompileInputs.cache
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\Cadastro-Usuarios-Infra.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\refint\Cadastro-Usuarios-Infra.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\Cadastro-Usuarios-Infra.pdb
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Infra\obj\Debug\net6.0\ref\Cadastro-Usuarios-Infra.dll
