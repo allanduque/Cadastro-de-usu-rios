@@ -11,4 +11,8 @@
     <Folder Include="Controller\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Cadastro-Usuarios-Infra.csproj" />
+  </ItemGroup>
+
 </Project>
