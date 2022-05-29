@@ -1,10 +1,11 @@
-﻿using Cadastro_Usuarios_Domain.Entities;
+﻿using Cadastro_Usuarios_Domain.Data;
+using Cadastro_Usuarios_Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cadastro_Usuarios_Domain.ContextConfiguration
 {
-    public class UsuarioDbContext : DbContext
+    public class UsuarioDbContext : DbContext, IUnitOfWork
     {
         private readonly IMediator _mediatorHandler;
         public UsuarioDbContext(DbContextOptions<UsuarioDbContext> options, IMediator mediatorHandler) : base(options)
@@ -22,12 +23,6 @@ namespace Cadastro_Usuarios_Domain.ContextConfiguration
             foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
                 relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 
-
-            builder.Entity<Usuario>()
-                .HasIndex(u => u.Id)
-                .IsUnique(false);
-
-            base.OnModelCreating(builder);
         }
 
         public async Task<bool> Commit()

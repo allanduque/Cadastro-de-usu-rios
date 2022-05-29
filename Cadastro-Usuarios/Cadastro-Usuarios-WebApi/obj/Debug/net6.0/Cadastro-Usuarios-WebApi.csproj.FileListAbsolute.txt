@@ -95,3 +95,12 @@ C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-U
 C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Humanizer.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Cadastro-Usuarios-Application.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Cadastro-Usuarios-Infra.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Cadastro-Usuarios-Application.pdb
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-WebApi\bin\Debug\net6.0\Cadastro-Usuarios-Infra.pdb

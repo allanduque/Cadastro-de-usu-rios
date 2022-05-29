@@ -1,5 +1,8 @@
-﻿using Cadastro_Usuarios_Domain.Bases;
+﻿using Cadastro_Usuarios_Application.Commands.CadastrarUsuario;
+using Cadastro_Usuarios_Domain.Bases;
+using Cadastro_Usuarios_Domain.DTOs;
 using Cadastro_Usuarios_Domain.Entities;
+using Cadastro_Usuarios_Domain.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,26 +13,47 @@ namespace Cadastro_Usuarios_WebApi.Controllers
     public class UsuarioController : Cadastro_Usuarios_Domain.Bases.ControllerBase
     {
         private readonly IMediator _mediatorHandler;
-        public UsuarioController(IMediator mediatorHandler, IHttpContextAccessor httpContextAccessor) : base(mediatorHandler, httpContextAccessor)
+        private readonly IUsuarioRepository _usuarioRepository;
+
+        public UsuarioController(IMediator mediatorHandler, IHttpContextAccessor httpContextAccessor, IUsuarioRepository usuarioRepository) : base(mediatorHandler, httpContextAccessor)
         {
             _mediatorHandler = mediatorHandler;
+            _usuarioRepository = usuarioRepository;
         }
         [HttpGet("BuscarTodosUsuarios")]
         public async Task<IActionResult> BuscarTodosUsuarios()
         {
-            return Response();          
+            return Ok(_usuarioRepository.BuscarTodosUsuarios());          
         }
 
         [HttpPost("CadastrarUsuario")]
-        public async Task<IActionResult> CadastrarUsuario()
+        public async Task<IActionResult> CadastrarUsuario([FromBody] UsuarioDTO usuario)
         {
-            return Response();
+            var command = new CadastrarUsuarioCommand(usuario);
+            
+            var result = await _mediatorHandler.Send(command);
+
+            return (result != null)? Ok(result) :BadRequest();           
         }
 
         [HttpDelete("DeletarUsuario")]
-        public async Task<IActionResult> DeletarUsuario()
+        public async Task<IActionResult> DeletarUsuario([FromBody] UsuarioDTO usuario)
         {
-            return Response();
+            var command = new DeletarUsuarioCommand(usuario);
+
+            var result = await _mediatorHandler.Send(command);
+
+            return (result != null) ? Ok(result) : BadRequest(); ;
+        }
+
+        [HttpPut("AtualizarUsuario")]
+        public async Task<IActionResult> AtualizarUsuario([FromBody] UsuarioDTO usuario)
+        {
+            var command = new AtualizarUsuarioCommand(usuario);
+
+            var result = await _mediatorHandler.Send(command);
+
+            return (result != null) ? Ok(result) : BadRequest(); ;
         }
     }
 }

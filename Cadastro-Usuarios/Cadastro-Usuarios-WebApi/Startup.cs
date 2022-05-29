@@ -20,11 +20,8 @@ namespace Cadastro_Usuarios_WebApi
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddCustomDbContext(Configuration)
-            .AddIntegrationEventHandlers()
             .AddRepositories()
-            .AddServices()
             .AddCommands()
-            .AddNotifications()
             .AddSwagger(Configuration)
             .AddHttpClientsConfig(Configuration);
             services.AddMediatR(typeof(Startup));

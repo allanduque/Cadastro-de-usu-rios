@@ -1,6 +1,11 @@
 ﻿
 
+using Cadastro_Usuarios_Application.Commands.CadastrarUsuario;
 using Cadastro_Usuarios_Domain.ContextConfiguration;
+using Cadastro_Usuarios_Domain.Entities;
+using Cadastro_Usuarios_Domain.Interfaces;
+using Cadastro_Usuarios_Infra.Repositories;
+using MediatR;
 using Microsoft.OpenApi.Models;
 using Polly;
 using Polly.Extensions.Http;
@@ -16,33 +21,18 @@ namespace Cadastro_Usuarios_WebApi.Extensions
 
             return services;
         }
-        public static IServiceCollection AddIntegrationEventHandlers(this IServiceCollection services)
-        {
-            //services.AddTransient<PresencaDeCargaRespondedEventHandler>();
-
-            return services;
-        }
         public static IServiceCollection AddCommands(this IServiceCollection services)
         {
-           // services.AddScoped<IRequestHandler<RealizarPresencaDeCargaCommand, Unit>, RealizarPresencaDeCargaCommandHandler>();
+            services.AddScoped<IRequestHandler<CadastrarUsuarioCommand, Usuario>, CadastrarUsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<DeletarUsuarioCommand, Usuario>, DeletarUsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<AtualizarUsuarioCommand, Usuario>, AtualizarUsuarioCommandHandler>();
            
-            return services;
-        }
-        public static IServiceCollection AddNotifications(this IServiceCollection services)
-        {
-            //services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
-
             return services;
         }
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-
-            return services;
-        }
-        public static IServiceCollection AddServices(this IServiceCollection services)
-        {
-            //services.AddScoped<IIntegracaoN4, IntegracaoN4Service>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
             return services;
         }
@@ -71,7 +61,6 @@ namespace Cadastro_Usuarios_WebApi.Extensions
 
             services.AddHttpClient("IntegracaoRpaClient", config =>
             {
-                var configBaseAddresPath = Convert.ToBoolean(configuration["UiPathConfig:Cloud"]) ? "UiPathConfig:CloudConfig:Address" : "UiPathConfig:OnPremisesConfig:Address";
 
                 config.BaseAddress = new Uri("http://localhost:3000/");
                 config.Timeout = new TimeSpan(0, 1, 0);

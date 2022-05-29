@@ -4,6 +4,104 @@
     "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-WebApi\\Cadastro-Usuarios-WebApi.csproj": {}
   },
   "projects": {
+    "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Application\\Cadastro-Usuarios-Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Application\\Cadastro-Usuarios-Application.csproj",
+        "projectName": "Cadastro-Usuarios-Application",
+        "projectPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Application\\Cadastro-Usuarios-Application.csproj",
+        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Domain\\Cadastro-Usuarios-Domain.csproj": {
+                "projectPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Domain\\Cadastro-Usuarios-Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Http.Polly": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Domain\\Cadastro-Usuarios-Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -40,6 +138,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[10.0.1, )"
@@ -60,13 +162,121 @@
               "target": "Package",
               "version": "[6.0.5, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.5, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Http.Polly": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Infra\\Cadastro-Usuarios-Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Infra\\Cadastro-Usuarios-Infra.csproj",
+        "projectName": "Cadastro-Usuarios-Infra",
+        "projectPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Infra\\Cadastro-Usuarios-Infra.csproj",
+        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Domain\\Cadastro-Usuarios-Domain.csproj": {
+                "projectPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Domain\\Cadastro-Usuarios-Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
@@ -124,8 +334,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Application\\Cadastro-Usuarios-Application.csproj": {
+                "projectPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Application\\Cadastro-Usuarios-Application.csproj"
+              },
               "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Domain\\Cadastro-Usuarios-Domain.csproj": {
                 "projectPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Domain\\Cadastro-Usuarios-Domain.csproj"
+              },
+              "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Infra\\Cadastro-Usuarios-Infra.csproj": {
+                "projectPath": "C:\\Users\\ThinkPad\\source\\repos\\Cadastro-de-usuarios\\Cadastro-Usuarios\\Cadastro-Usuarios-Infra\\Cadastro-Usuarios-Infra.csproj"
               }
             }
           }
@@ -144,6 +360,10 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[10.0.1, )"
@@ -152,9 +372,17 @@
               "target": "Package",
               "version": "[10.0.1, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",

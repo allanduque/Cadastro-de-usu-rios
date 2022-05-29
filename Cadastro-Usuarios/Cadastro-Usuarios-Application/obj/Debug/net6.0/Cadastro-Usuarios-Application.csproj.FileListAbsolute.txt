@@ -10,3 +10,8 @@ C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-U
 C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Application\obj\Debug\net6.0\refint\Cadastro-Usuarios-Application.dll
 C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Application\obj\Debug\net6.0\Cadastro-Usuarios-Application.pdb
 C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Application\obj\Debug\net6.0\ref\Cadastro-Usuarios-Application.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Application\bin\Debug\net6.0\Cadastro-Usuarios-Application.runtimeconfig.json
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Application\bin\Debug\net6.0\Cadastro-Usuarios-Domain.dll
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Application\bin\Debug\net6.0\Cadastro-Usuarios-Domain.pdb
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Application\obj\Debug\net6.0\Cadastro-Usuarios-Application.csproj.CopyComplete
+C:\Users\ThinkPad\source\repos\Cadastro-de-usuarios\Cadastro-Usuarios\Cadastro-Usuarios-Application\obj\Debug\net6.0\Cadastro-Usuarios-Application.genruntimeconfig.cache
