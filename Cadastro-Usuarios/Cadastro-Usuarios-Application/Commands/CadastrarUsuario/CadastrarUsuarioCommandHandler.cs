@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
 {
-    public class CadastrarUsuarioCommandHandler : IRequestHandler<CadastrarUsuarioCommand, Usuario>
+    public class CadastrarUsuarioCommandHandler : IRequestHandler<CadastrarUsuarioCommand, UsuarioResponse>
     {
         private readonly IMediator _mediator;
         private readonly IUsuarioRepository _usuarioRepository;
@@ -17,44 +17,50 @@ namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
             _mediator = mediator;
             _usuarioRepository = usuarioRepository;
         }
-        public async Task<Usuario> Handle(CadastrarUsuarioCommand request, CancellationToken cancellationToken)
+        public async Task<UsuarioResponse> Handle(CadastrarUsuarioCommand request, CancellationToken cancellationToken)
         {
             _cancellationToken = cancellationToken;
 
-            if (!ValidarComando(request))
+            var validaCommand = ValidarComando(request);
+
+            if (!validaCommand.Sucesso)
             {
-                return null;
+                return validaCommand;
             }
 
             return CasdastroUsuario(request);
 
         }
-        private bool ValidarComando(CadastrarUsuarioCommand message)
+        private UsuarioResponse ValidarComando(CadastrarUsuarioCommand message)
         {
-            if (message.EhValido()) return true;
+            var response = new UsuarioResponse(null, true, null);
 
+            if (message.EhValido()) return response;
+
+            var erros = new List<string>();
             foreach (var error in message.ValidationResult.Errors)
             {
-                _mediator.Publish(new { message = error.ErrorMessage, sucess = false, data = "" });
+                erros.Add(error.ErrorMessage);
             }
-
-            return false;
+            response.Sucesso = false;
+            response.Erros = erros;
+            return response;
         }
 
-        private Usuario CasdastroUsuario(CadastrarUsuarioCommand request)
+
+        private UsuarioResponse CasdastroUsuario(CadastrarUsuarioCommand request)
         {
             var usuario = _usuarioRepository.CadastrarUsuario(request.ToEntity());
 
             if (_usuarioRepository.UnitOfWork.Commit().Result)
             {
-
-                return usuario;
+                return new UsuarioResponse(usuario, true);
             }
             else
             {
-
-                return null;
-
+                var erro = new List<string>();
+                erro.Add("Erro ao cadastrar usuário");
+                return new UsuarioResponse(null, false, erro);
             }
         }
     }

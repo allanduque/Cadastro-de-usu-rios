@@ -5,7 +5,7 @@ using FluentValidation;
 
 namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
 {
-    public class AtualizarUsuarioCommand : Command<Usuario>
+    public class AtualizarUsuarioCommand : Command<UsuarioResponse>
     {
         public UsuarioDTO usuarioDTO { get; set; }
 
@@ -36,7 +36,7 @@ namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
                     .NotNull()
                     .NotEmpty()
                     .GreaterThan(0)
-                    .WithMessage("Nome do usuário é inválido");
+                    .WithMessage("Id do usuário é inválido");
 
                 RuleFor(c => c.usuarioDTO.Nome)
                     .NotNull()

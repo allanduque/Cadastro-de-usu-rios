@@ -23,9 +23,9 @@ namespace Cadastro_Usuarios_WebApi.Extensions
         }
         public static IServiceCollection AddCommands(this IServiceCollection services)
         {
-            services.AddScoped<IRequestHandler<CadastrarUsuarioCommand, Usuario>, CadastrarUsuarioCommandHandler>();
-            services.AddScoped<IRequestHandler<DeletarUsuarioCommand, Usuario>, DeletarUsuarioCommandHandler>();
-            services.AddScoped<IRequestHandler<AtualizarUsuarioCommand, Usuario>, AtualizarUsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<CadastrarUsuarioCommand, UsuarioResponse>, CadastrarUsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<DeletarUsuarioCommand, UsuarioResponse>, DeletarUsuarioCommandHandler>();
+            services.AddScoped<IRequestHandler<AtualizarUsuarioCommand, UsuarioResponse>, AtualizarUsuarioCommandHandler>();
            
             return services;
         }
@@ -59,14 +59,6 @@ namespace Cadastro_Usuarios_WebApi.Extensions
                            .HandleTransientHttpError()
                            .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(retryAttempt));
 
-            services.AddHttpClient("IntegracaoRpaClient", config =>
-            {
-
-                config.BaseAddress = new Uri("http://localhost:3000/");
-                config.Timeout = new TimeSpan(0, 1, 0);
-                config.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            }).AddPolicyHandler(retryPolicy);
 
             return services;
         }

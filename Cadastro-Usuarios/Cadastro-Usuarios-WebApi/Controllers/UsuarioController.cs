@@ -21,7 +21,7 @@ namespace Cadastro_Usuarios_WebApi.Controllers
             _usuarioRepository = usuarioRepository;
         }
         [HttpGet("BuscarTodosUsuarios")]
-        public async Task<IActionResult> BuscarTodosUsuarios()
+        public IActionResult BuscarTodosUsuarios()
         {
             return Ok(_usuarioRepository.BuscarTodosUsuarios());          
         }
@@ -33,7 +33,8 @@ namespace Cadastro_Usuarios_WebApi.Controllers
             
             var result = await _mediatorHandler.Send(command);
 
-            return (result != null)? Ok(result) :BadRequest();           
+            return (result.Sucesso) ? Ok(result.Usuario) : BadRequest(result.Erros); ;
+
         }
 
         [HttpDelete("DeletarUsuario")]
@@ -43,7 +44,7 @@ namespace Cadastro_Usuarios_WebApi.Controllers
 
             var result = await _mediatorHandler.Send(command);
 
-            return (result != null) ? Ok(result) : BadRequest(); ;
+            return (result.Sucesso) ? Ok(result.Usuario) : BadRequest(result.Erros); ;
         }
 
         [HttpPut("AtualizarUsuario")]
@@ -53,7 +54,7 @@ namespace Cadastro_Usuarios_WebApi.Controllers
 
             var result = await _mediatorHandler.Send(command);
 
-            return (result != null) ? Ok(result) : BadRequest(); ;
+            return (result.Sucesso) ? Ok(result.Usuario) : BadRequest(result.Erros); ;
         }
     }
 }

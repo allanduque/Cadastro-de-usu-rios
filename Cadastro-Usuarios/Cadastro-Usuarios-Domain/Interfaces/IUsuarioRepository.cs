@@ -11,7 +11,7 @@ namespace Cadastro_Usuarios_Domain.Interfaces
     public interface IUsuarioRepository : IRepository<Usuario>
     {
         Usuario CadastrarUsuario(Usuario usuario);
-        IEnumerable<Usuario> BuscarTodosUsuarios();
+        List<Usuario> BuscarTodosUsuarios();
         Usuario DeletarUsuario(Usuario usuario);
         Usuario AtualizarUsuario(Usuario usuario);
         Usuario? BuscarUsuarioPorId(int Id);

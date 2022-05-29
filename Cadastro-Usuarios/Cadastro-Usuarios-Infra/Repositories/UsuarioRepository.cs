@@ -28,7 +28,7 @@ namespace Cadastro_Usuarios_Infra.Repositories
             return usuario;
         }
 
-        public IEnumerable<Usuario> BuscarTodosUsuarios()
+        public List<Usuario> BuscarTodosUsuarios()
         {
             return _context.Usuarios.ToList();
         }

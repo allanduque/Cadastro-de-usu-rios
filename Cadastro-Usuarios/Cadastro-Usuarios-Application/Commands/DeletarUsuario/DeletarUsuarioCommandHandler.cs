@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
 {
-    public class DeletarUsuarioCommandHandler : IRequestHandler<DeletarUsuarioCommand, Usuario>
+    public class DeletarUsuarioCommandHandler : IRequestHandler<DeletarUsuarioCommand, UsuarioResponse>
     {
         private readonly IMediator _mediator;
         private readonly IUsuarioRepository _usuarioRepository;
@@ -17,33 +17,40 @@ namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
             _mediator = mediator;
             _usuarioRepository = usuarioRepository;
         }
-        public async Task<Usuario> Handle(DeletarUsuarioCommand request, CancellationToken cancellationToken)
+        public async Task<UsuarioResponse> Handle(DeletarUsuarioCommand request, CancellationToken cancellationToken)
         {
             _cancellationToken = cancellationToken;
 
-            if (!ValidarComando(request))
+            var validaCommand = ValidarComando(request);
+
+            if (!validaCommand.Sucesso)
             {
-                return null;
+                return validaCommand;
             }
 
             return DeletarUsuario(request);
 
         }
-        private bool ValidarComando(DeletarUsuarioCommand message)
+        private UsuarioResponse ValidarComando(DeletarUsuarioCommand message)
         {
-            if (message.EhValido()) return true;
+            var response = new UsuarioResponse(null, true, null);
 
+            if (message.EhValido()) return response;
+
+            var erros = new List<string>();
             foreach (var error in message.ValidationResult.Errors)
             {
-                _mediator.Publish(new { message = error.ErrorMessage, sucess = false, data = "" });
+                erros.Add(error.ErrorMessage);
             }
-
-            return false;
+            response.Sucesso = false;
+            response.Erros = erros;
+            return response;
         }
 
-        private Usuario DeletarUsuario(DeletarUsuarioCommand request)
+        private UsuarioResponse DeletarUsuario(DeletarUsuarioCommand request)
         {
             var usuarioEncontrado = _usuarioRepository.BuscarUsuarioPorId(request.usuarioDTO.Id);
+            var erro = new List<string>();
             if(usuarioEncontrado != null)
             {
                 var usuario = _usuarioRepository.DeletarUsuario(usuarioEncontrado);
@@ -51,17 +58,17 @@ namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
                 if (_usuarioRepository.UnitOfWork.Commit().Result)
                 {
 
-                    return usuario;
+                    return new UsuarioResponse(usuario, true);
                 }
                 else
                 {
-
-                    return null;
-
+                    erro.Add("Erro ao deletar usuário");
+                    return new UsuarioResponse(null, false, erro);
                 }
 
             }
-            return null;
+            erro.Add("Usuário não encontrado");
+            return new UsuarioResponse(null, false, erro); 
         }
     }
 }

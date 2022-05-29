@@ -5,7 +5,7 @@ using FluentValidation;
 
 namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
 {
-    public class CadastrarUsuarioCommand : Command<Usuario>
+    public class CadastrarUsuarioCommand : Command<UsuarioResponse>
     {
         public UsuarioDTO usuarioDTO { get; set; }
 

@@ -5,7 +5,7 @@ using FluentValidation;
 
 namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
 {
-    public class DeletarUsuarioCommand : Command<Usuario>
+    public class DeletarUsuarioCommand : Command<UsuarioResponse>
     {
         public UsuarioDTO usuarioDTO { get; set; }
 
@@ -36,7 +36,7 @@ namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
                     .NotNull()
                     .NotEmpty()
                     .GreaterThan(0)
-                    .WithMessage("Nome do usuário é inválido");
+                    .WithMessage("Id do usuário é inválido");
             }
         }
     }

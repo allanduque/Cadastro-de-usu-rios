@@ -14,6 +14,8 @@ namespace Cadastro_Usuarios_WebApi
         public void ConfigureServices(IWebHostEnvironment env, IServiceCollection services)
         {
             services.AddControllers();
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
 
             services.AddLogging();
 
@@ -25,6 +27,8 @@ namespace Cadastro_Usuarios_WebApi
             .AddSwagger(Configuration)
             .AddHttpClientsConfig(Configuration);
             services.AddMediatR(typeof(Startup));
+
+            services.AddCors();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceCollection services)
         {
@@ -40,6 +44,11 @@ namespace Cadastro_Usuarios_WebApi
             // app.UseHttpsRedirection();
 
             app.UseAuthorization();
+            
+            app.UseCors(cors => cors.AllowAnyHeader()
+                                   .AllowAnyMethod()
+                                   .AllowAnyOrigin()
+             );
 
             app.UseEndpoints(endpoints =>
             {
