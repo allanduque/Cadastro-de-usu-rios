@@ -36,6 +36,15 @@ namespace Cadastro_Usuarios_WebApi.Controllers
             return (result.Sucesso) ? Ok(result.Usuario) : BadRequest(result.Erros); ;
 
         }
+        [HttpDelete("DeletarUsuarioPorId")]
+        public async Task<IActionResult> DeletarUsuarioPorId(int Id)
+        {
+            var command = new DeletarUsuarioCommand(Id);
+
+            var result = await _mediatorHandler.Send(command);
+
+            return (result.Sucesso) ? Ok(result.Usuario) : BadRequest(result.Erros); ;
+        }
 
         [HttpDelete("DeletarUsuario")]
         public async Task<IActionResult> DeletarUsuario([FromBody] UsuarioDTO usuario)

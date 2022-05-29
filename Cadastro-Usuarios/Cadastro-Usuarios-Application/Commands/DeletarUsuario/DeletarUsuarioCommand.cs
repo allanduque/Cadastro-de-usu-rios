@@ -14,6 +14,12 @@ namespace Cadastro_Usuarios_Application.Commands.CadastrarUsuario
             this.usuarioDTO = usuarioDTO;
         }
 
+        public DeletarUsuarioCommand(int id)
+        {
+            this.usuarioDTO = new UsuarioDTO();
+            this.usuarioDTO.Id = id;
+        }
+
         public override bool EhValido()
         {
             ValidationResult = new DeletarUsuarioValidation().Validate(this);
